@@ -1,4 +1,4 @@
-import { Detail, LaunchProps } from "@raycast/api";
+import { ActionPanel, Action, Detail, LaunchProps } from "@raycast/api";
 import { spawn } from "child_process";
 import { useState, useEffect } from "react";
 
@@ -26,5 +26,19 @@ export default function Command(props: LaunchProps<{ arguments: Arguments.Dict }
     });
   }, []);
 
-  return <Detail markdown={`${output}`}/>;
+  const openInApp = (word: string) => {
+    spawn("open", [`dict://${word}`]);
+  }
+
+  return <Detail 
+    markdown={`${output}`} 
+    actions={
+      <ActionPanel title="hey">
+        <Action
+          title="Open in Dictionary App"
+          onAction={() => openInApp(word)}
+        />
+      </ActionPanel>
+    }
+    />;
 }
