@@ -15,5 +15,5 @@ let range = CFRange(location: 0, length: CFStringGetLength(word))
 if let definition = DCSCopyTextDefinition(nil, word, range) {
   print(definition.takeRetainedValue())
 } else {
-  print("")
+  print("No definition")
 }

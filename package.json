@@ -1,15 +1,15 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "search-your-dict",
-  "title": "Search your dict",
-  "description": "link apple native dict to raycast extension",
+  "title": "Search Your Dictionary",
+  "description": "link apple native dict to Raycast extension",
   "icon": "extension-icon.png",
   "author": "mingsheng13",
   "license": "MIT",
   "commands": [
     {
       "name": "dict",
-      "title": "dict",
+      "title": "Dictionary",
       "description": "Check MacOS native dictionary.",
       "mode": "view",
       "arguments": [{"name": "word", "type": "text", "placeholder": "keyword", "required": true}]
@@ -17,9 +17,7 @@
   ],
   "dependencies": {
     "@raycast/api": "^1.101.1",
-    "@raycast/utils": "^1.17.0",
-    "chokidar": "^4.0.3",
-    "concurrently": "^9.2.0"
+    "@raycast/utils": "^1.17.0"
   },
   "devDependencies": {
     "@raycast/eslint-config": "^2.0.4",
@@ -33,7 +31,7 @@
     "build": "ray build",
     "dev": "npm run swift && ray develop",
     "preswift": "echo \"building swift\"",
-    "swift": "npm run preswift && swiftc -o dict ./src/main.swift",
+    "swift": "npm run preswift && swiftc -o ./assets/dict ./src/main.swift",
     "fix-lint": "ray lint --fix",
     "lint": "ray lint",
     "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\`prepublishOnly\\` script and rerun \\`npm publish\\` again.\\nIf you wanted to publish it to the Raycast Store instead, use \\`npm run publish\\` instead.\\n\\n\" && exit 1",
